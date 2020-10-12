@@ -1,23 +1,4 @@
-# -*- coding: utf-8 -*-
-
-
-__all__ = ("Map", "WeixinError")
-
-
-try:
-    unicode = unicode
-except NameError:
-    # python 3
-    basestring = (str, bytes)
-else:
-    # python 2
-    bytes = str
-
-
-class WeixinError(Exception):
-
-    def __init__(self, msg):
-        super(WeixinError, self).__init__(msg)
+__all__ = ['Map', 'WeixinError']
 
 
 class Map(dict):
@@ -63,3 +44,9 @@ class Map(dict):
     def __delitem__(self, key):
         super(Map, self).__delitem__(key)
         del self.__dict__[key]
+
+
+class WeixinError(Exception):
+
+    def __init__(self, msg):
+        super(WeixinError, self).__init__(msg)

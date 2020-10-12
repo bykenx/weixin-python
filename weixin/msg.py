@@ -1,11 +1,5 @@
-# -*- coding: utf-8 -*-
-
-
-from __future__ import unicode_literals
-
 import time
 import hashlib
-
 from datetime import datetime
 
 from .base import WeixinError
@@ -258,7 +252,7 @@ class WeixinMsg(object):
                     text = func(**ret)
 
                 content = ''
-                if isinstance(text, basestring):
+                if isinstance(text, str):
                     if text:
                         content = self.reply(
                             username=ret['sender'],
@@ -315,7 +309,7 @@ class WeixinMsg(object):
             text = func(**ret)
 
         content = ''
-        if isinstance(text, basestring):
+        if isinstance(text, str):
             if text:
                 content = self.reply(
                     username=ret['sender'],
