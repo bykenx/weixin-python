@@ -19,8 +19,8 @@ with open('weixin/__init__.py', 'rb') as f:
 def fread(fname):
     filepath = os.path.join(os.path.dirname(__file__), fname)
     if os.path.exists(filepath):
-        with open(filepath) as f:
-            return f.read()
+        with open(filepath, 'rb') as f:
+            return f.read().decode('utf-8')
 
 setup(
     name='weixin-python',
